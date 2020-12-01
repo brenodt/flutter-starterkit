@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 
+import '../../localization.dart';
 import '../../styles.dart';
 import '../models/counter.dart';
 
@@ -21,9 +22,8 @@ class _HomePageState extends State<HomePage> {
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
           children: <Widget>[
-            Text(
-              'You have pushed the button this many times:',
-            ),
+            Text(AppLocalization.of(context)
+                .translate(TranslationKey.homePageLabel)),
             Text(
               '${_counter.value}',
               style: AppStyles.basic,
@@ -33,7 +33,8 @@ class _HomePageState extends State<HomePage> {
       ),
       floatingActionButton: FloatingActionButton(
         onPressed: () => setState(_counter.increment),
-        tooltip: 'Increment',
+        tooltip: AppLocalization.of(context)
+            .translate(TranslationKey.homePageTooltip),
         child: Icon(Icons.add),
       ),
     );

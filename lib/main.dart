@@ -1,6 +1,9 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_localizations/flutter_localizations.dart';
+import 'package:intl/intl.dart';
 
-import 'routes.dart';
+import 'localization.dart';
+import 'navigation.dart';
 import 'src/views/home_page.dart';
 
 void main() {
@@ -24,6 +27,30 @@ class MyApp extends StatelessWidget {
               return null;
           }
         });
+      },
+      localizationsDelegates: [
+        AppLocalization.delegate,
+        GlobalMaterialLocalizations.delegate,
+        GlobalCupertinoLocalizations.delegate,
+        GlobalWidgetsLocalizations.delegate,
+      ],
+      supportedLocales: [
+        const Locale('en', null),
+        const Locale('pt', null),
+      ],
+      localeResolutionCallback: (locale, supportedLocales) {
+        if (locale == null) {
+          Intl.defaultLocale = supportedLocales.first.toLanguageTag();
+          return supportedLocales.first;
+        }
+        for (var supportedLocale in supportedLocales) {
+          if (supportedLocale.languageCode == locale.languageCode) {
+            Intl.defaultLocale = supportedLocale.toLanguageTag();
+            return supportedLocale;
+          }
+        }
+        Intl.defaultLocale = supportedLocales.first.toLanguageTag();
+        return supportedLocales.first;
       },
     );
   }

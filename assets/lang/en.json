@@ -1,0 +1,6 @@
+{
+  "home": {
+    "label": "You have pressed the button this many times:",
+    "tooltip": "Increment"
+  }
+}
