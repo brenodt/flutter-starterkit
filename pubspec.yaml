@@ -19,6 +19,8 @@ dependencies:
 dev_dependencies:
   flutter_test:
     sdk: flutter
+  effective_dart: ^1.2.4
+  import_sorter: ^4.4.1
 
 flutter:
   uses-material-design: true

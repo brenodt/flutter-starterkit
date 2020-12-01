@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 
 class AppColors {
-  static Color get black => Color(0xFF1C1C1C);
+  static const Color black = Color(0xFF1C1C1C);
 }
 
 extension AppStyles on TextTheme {

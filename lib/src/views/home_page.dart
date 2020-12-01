@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
-import 'package:project_base/models/counter.dart';
 
 import '../../styles.dart';
+import '../models/counter.dart';
 
 class HomePage extends StatefulWidget {
   HomePage({Key key}) : super(key: key);
@@ -11,7 +11,7 @@ class HomePage extends StatefulWidget {
 }
 
 class _HomePageState extends State<HomePage> {
-  Counter _counter = Counter();
+  final Counter _counter = Counter();
 
   @override
   Widget build(BuildContext context) {
@@ -32,7 +32,7 @@ class _HomePageState extends State<HomePage> {
         ),
       ),
       floatingActionButton: FloatingActionButton(
-        onPressed: () => setState(() => _counter.increment()),
+        onPressed: () => setState(_counter.increment),
         tooltip: 'Increment',
         child: Icon(Icons.add),
       ),

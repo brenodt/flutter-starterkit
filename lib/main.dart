@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
-import 'package:project_base/src/views/home_page.dart';
 
 import 'routes.dart';
+import 'src/views/home_page.dart';
 
 void main() {
   runApp(MyApp());
