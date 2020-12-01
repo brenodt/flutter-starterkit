@@ -22,5 +22,15 @@ dev_dependencies:
   effective_dart: ^1.2.4
   import_sorter: ^4.4.1
 
+  flutter_launcher_icons: ^0.8.1
+
+flutter_icons:
+  ios: true
+  image_path_ios: "assets/icon/ios_icon.png"
+  android: true
+  image_path_android: "assets/icon/android_icon.png"
+  adaptive_icon_background: "assets/icon/background.png"
+  adaptive_icon_foreground: "assets/icon/foreground.png"
+
 flutter:
   uses-material-design: true
