@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:project_base/models/counter.dart';
 
+import '../../styles.dart';
+
 class HomePage extends StatefulWidget {
   HomePage({Key key}) : super(key: key);
 
@@ -24,7 +26,7 @@ class _HomePageState extends State<HomePage> {
             ),
             Text(
               '${_counter.value}',
-              style: Theme.of(context).textTheme.headline4,
+              style: AppStyles.basic,
             ),
           ],
         ),
