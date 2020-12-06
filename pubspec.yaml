@@ -14,6 +14,9 @@ dependencies:
     sdk: flutter
   cupertino_icons: ^1.0.0
   responsive_framework: ^0.0.14
+  flutter_dotenv: ^2.1.0
+
+  wiredash: ^0.3.0
 
   # I18N Dependencies
   flutter_localizations:
@@ -43,4 +46,5 @@ flutter:
   uses-material-design: true
 
   assets:
+    - .env
     - assets/lang/
