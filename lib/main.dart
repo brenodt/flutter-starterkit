@@ -6,7 +6,6 @@ import 'package:provider/provider.dart';
 
 import 'localization.dart';
 import 'navigation.dart';
-import 'src/views/home_page.dart';
 
 void main() {
   runApp(
@@ -24,19 +23,7 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
       initialRoute: Routes.home,
-      onGenerateRoute: (settings) {
-        return Routes.fadeThrough(settings, (context) {
-          switch (settings.name) {
-            case Routes.home:
-              return WillPopScope(
-                onWillPop: () async => false,
-                child: HomePage(),
-              );
-            default:
-              return null;
-          }
-        });
-      },
+      onGenerateRoute: Routes.onGenerateRoute,
       localizationsDelegates: [
         AppLocalization.delegate,
         GlobalMaterialLocalizations.delegate,
