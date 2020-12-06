@@ -1,13 +1,22 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_localizations/flutter_localizations.dart';
 import 'package:intl/intl.dart';
+import 'package:project_base/src/services/connectivity_service.dart';
+import 'package:provider/provider.dart';
 
 import 'localization.dart';
 import 'navigation.dart';
 import 'src/views/home_page.dart';
 
 void main() {
-  runApp(MyApp());
+  runApp(
+    MultiProvider(
+      providers: [
+        Provider<ConnectionStatus>(create: (_) => ConnectionStatus()),
+      ],
+      child: MyApp(),
+    ),
+  );
 }
 
 class MyApp extends StatelessWidget {
