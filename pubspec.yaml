@@ -13,6 +13,7 @@ dependencies:
   flutter:
     sdk: flutter
   cupertino_icons: ^1.0.0
+  responsive_framework: ^0.0.14
 
   provider: ^4.3.2+2
 
@@ -30,6 +31,9 @@ dev_dependencies:
   import_sorter: ^4.4.1
 
   flutter_launcher_icons: ^0.8.1
+
+import_sorter:
+  comments: false
 
 flutter_icons:
   ios: true

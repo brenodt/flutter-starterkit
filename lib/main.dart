@@ -1,11 +1,11 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_localizations/flutter_localizations.dart';
 import 'package:intl/intl.dart';
-import 'package:project_base/src/services/connectivity_service.dart';
-import 'package:provider/provider.dart';
+import 'package:responsive_framework/responsive_framework.dart';
 
 import 'localization.dart';
 import 'navigation.dart';
+import 'src/services/connectivity_service.dart';
 
 void main() {
   runApp(
@@ -18,7 +18,7 @@ void main() {
   );
 }
 
-class MyApp extends StatelessWidget {
+class App extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
@@ -30,6 +30,17 @@ class MyApp extends StatelessWidget {
         GlobalCupertinoLocalizations.delegate,
         GlobalWidgetsLocalizations.delegate,
       ],
+      builder: (final context, final navigator) => ResponsiveWrapper.builder(
+        BouncingScrollWrapper.builder(context, navigator),
+        maxWidth: 1200,
+        minWidth: 480,
+        defaultScale: true,
+        breakpoints: const [
+          ResponsiveBreakpoint.resize(480, name: MOBILE),
+          ResponsiveBreakpoint.autoScale(800, name: TABLET),
+          ResponsiveBreakpoint.resize(1000, name: DESKTOP),
+        ],
+      ),
       supportedLocales: [
         const Locale('en', null),
         const Locale('pt', null),
