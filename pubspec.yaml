@@ -20,6 +20,10 @@ dependencies:
     sdk: flutter
   intl: ^0.16.1
 
+  # Firebase Dependencies
+  firebase_core: ^0.5.2+1
+  firebase_analytics: ^5.0.2
+
 dev_dependencies:
   flutter_test:
     sdk: flutter
