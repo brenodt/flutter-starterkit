@@ -24,12 +24,6 @@ class App extends StatelessWidget {
     return MaterialApp(
       initialRoute: Routes.home,
       onGenerateRoute: Routes.onGenerateRoute,
-      localizationsDelegates: [
-        AppLocalization.delegate,
-        GlobalMaterialLocalizations.delegate,
-        GlobalCupertinoLocalizations.delegate,
-        GlobalWidgetsLocalizations.delegate,
-      ],
       builder: (final context, final navigator) => ResponsiveWrapper.builder(
         BouncingScrollWrapper.builder(context, navigator),
         maxWidth: 1200,
@@ -44,6 +38,12 @@ class App extends StatelessWidget {
       supportedLocales: [
         const Locale('en', null),
         const Locale('pt', null),
+      ],
+      localizationsDelegates: [
+        AppLocalization.delegate,
+        GlobalMaterialLocalizations.delegate,
+        GlobalCupertinoLocalizations.delegate,
+        GlobalWidgetsLocalizations.delegate,
       ],
       localeResolutionCallback: (locale, supportedLocales) {
         if (locale == null) {
